@@ -1,0 +1,519 @@
+
+.schedule-container {
+  max-width: 100vw;        
+  margin: 50px auto 30px auto;
+  margin-left: 50vw;       
+  height: calc(100vh - 60px);
+  display: flex;
+  gap: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.calendar-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50vw;              
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.candidates-panel {
+  flex: 1;
+  width: 50vw;              
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+
+.calendar-panel h3 {
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.calendar-header button {
+  cursor: pointer;
+  padding: 6px 14px;
+  font-size: 18px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.calendar-header button:hover {
+  background: #0056b3;
+}
+
+.mwl-calendar-month-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.mwl-calendar-month-view table {
+  width: 100%;
+  height: 100%;
+  border-collapse: separate;
+  border-spacing: 3px;
+  table-layout: fixed;
+}
+
+.mwl-calendar-month-view td {
+  height: 50px;
+  padding: 5px 8px;
+  vertical-align: top;
+  border-radius: 6px;
+  background: #f9f9f9;
+  font-size: 0.75rem;
+  cursor: default;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+ul li {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 18px 24px;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  color: #333;
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+ul li:hover {
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.2);
+}
+
+ul li strong {
+  font-size: 1rem;
+  color: #007bff;
+}
+
+input[type="datetime-local"] {
+  border: 1.8px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+  max-width: 100%;
+}
+
+input[type="datetime-local"]:focus {
+  border-color: #007bff;
+}
+
+button {
+  margin-top: 10px;
+  padding: 12px 22px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: 3px solid #80bdff;
+  outline-offset: 2px;
+}
+
+p {
+  font-size: 1rem;
+  color: #666;
+  font-style: italic;
+  padding: 8px 0;
+}
+
+@media (max-width: 900px) {
+  .schedule-container {
+    flex-direction: column;
+    padding: 24px 20px;
+    margin-left: 0;
+    max-width: 100vw;
+    height: auto;
+  }
+
+  .calendar-panel,
+  .candidates-panel {
+    position: static;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    box-shadow: none;
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+}
+
+
+.selected-day-interviews {
+  margin-top: 25px;
+  background: #eef6ff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(30, 144, 255, 0.25);
+  color: #0b3d91;
+  max-width: 600px;
+}
+
+.selected-day-interviews h4 {
+  margin-bottom: 15px;
+}
+
+.selected-day-interviews ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.selected-day-interviews li {
+  padding: 10px 12px;
+  border-bottom: 1px solid #cde1f9;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.selected-day-interviews li:last-child {
+  border-bottom: none;
+}
+
+
+
+
+.candidates-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 50vw;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+  padding: 28px 32px;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+/* Gornji deo - kandidati: zauzima 60% visine */
+.candidates-schedule {
+  flex: 0 0 auto;
+  min-height: 160px; /* Minimum height to fit one full card */
+  max-height: 40%;   /* Allow more cards but limit overall height */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 123, 255, 0.15);
+  padding: 20px;
+}
+
+
+.selected-day-interviews tr:last-child td {
+  border-bottom: none;
+}
+
+/* Lista kandidata scroll ako je puno */
+.candidates-schedule ul {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .candidates-panel {
+    height: auto;
+  }
+
+  .candidates-schedule,
+  .selected-day-interviews {
+    flex: none;
+    height: auto;
+    max-height: none;
+    box-shadow: none;
+    border-radius: 12px;
+    padding: 15px 10px;
+  }
+}
+
+
+.candidates-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 50vw;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+  padding: 28px 32px;
+  box-sizing: border-box;
+  gap: 20px;
+  overflow: hidden;
+}
+
+
+/* Candidate Schedule Section */
+.candidates-schedule {
+  flex: 1 1 0;
+  min-height: 250px; /* Ensures at least one card is fully visible */
+  max-height: 60%;   /* Prevents it from growing too large */
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 123, 255, 0.15);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* ukloni scroll sa kontejnera */
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;      /* raste i skuplja se po potrebi */
+  height: 100%;        /* ili neki fiksni max-height ako treba */
+  flex: 1;
+}
+
+
+/* Candidate Cards */
+.candidates-schedule ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.candidates-schedule li {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 18px 24px;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  color: #333;
+  margin: 20px 20px 20px 20px; /* gore desno dole levo */
+
+}
+
+/* Interview Table Section */
+.selected-day-interviews {
+  flex: 1 1 0;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(199, 210, 209, 0.4);
+  color:#0268d5; 
+  font-weight: 600;
+  overflow-y: auto;
+  max-height: 180px;
+  flex: 1;
+}
+
+  
+/* Table Styling */
+.selected-day-interviews table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.selected-day-interviews th,
+.selected-day-interviews td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #cdcdcd;
+  text-align: left;
+}
+
+.selected-day-interviews th {
+  background-color: #ececec;
+  color: #055dbb;
+  border-radius: 2px;
+}
+
+.selected-day-interviews tr:last-child td {
+  border-bottom: none;
+}
+
+/* Responsive Support */
+@media (max-width: 900px) {
+  .candidates-panel {
+    height: auto;
+  }
+
+  .candidates-schedule,
+  .selected-day-interviews {
+    flex: none;
+    height: auto;
+    max-height: none;
+    box-shadow: none;
+    border-radius: 12px;
+    padding: 15px 10px;
+  }
+}
+.candidates-schedule {
+  flex: 1 1 0;
+  min-height: 120px;    /* Smaller minimum height */
+  max-height: 60%;       /* Gives more space to interview list */
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.1);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Candidate card list */
+.candidates-schedule ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex-grow: 1;
+  margin-bottom: -20px;
+}
+
+.candidates-schedule li {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  padding: 5px 5px;
+  font-size: 0.75rem; 
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.candidates-schedule li strong {
+  font-size: 1rem;
+  color: #007bff;
+}
+
+.candidates-schedule li {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 12px 16px;
+  margin: 8px 16px; /* Makes the card narrower than the container */
+  font-size: 0.85rem;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.candidates-schedule li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
+}
+
+
+/* Stil za dugme "Pozovi" u tabeli */
+.selected-day-interviews button {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* da dugme ne prelomi tekst */
+}
+
+.selected-day-interviews button:hover {
+  background-color: #0056b3;
+}
+
+.selected-day-interviews tr:last-child td {
+  border-bottom: none;
+}
+
+
+.video-call-container {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  padding: 20px;
+  z-index: 1000;
+}
+
+.video-call-container video {
+  width: 320px;
+  height: 240px;
+  border-radius: 10px;
+  background: black;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.video-call-container button {
+  padding: 8px 20px;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.video-call-container button:hover {
+  background-color: #c82333;
+}
+
+

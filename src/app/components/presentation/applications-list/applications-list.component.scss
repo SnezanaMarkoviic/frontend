@@ -1,0 +1,230 @@
+/*
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+.body{
+    margin-top: 120px;
+}
+
+
+.logOutdiv{
+    margin-top: -65px;
+    margin-left: 1128px;
+}
+
+.logOutbtn{
+    right: 0;
+    border-radius: 5px;
+    border-color: #1976d2;
+    color: white;
+    background-color: #1976d2;
+    min-height: 40px;
+    min-width: 120px;
+    font-size: 1.05rem;
+}
+
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  margin-bottom: 20px;
+}
+
+.leftButtonDiv {
+    margin-top: 60px;
+    margin-left: -3px;
+    margin-bottom: 0px;
+}
+
+
+.btnNew{
+    margin: 20px;
+    border-radius: 5px;
+    border-color: #1976d2;
+    color: white;
+    background-color: #1976d2;
+    min-height: 40px;
+    min-width: 150px;
+}
+
+
+
+
+.btnApply{
+    background-color: blue;
+    border-color: blue;
+    border-radius: 3px;
+    color: white;
+    margin: 10px;
+    margin-right: 5px;
+    min-height: 30px;
+    min-width: 65px;
+}
+
+.strong-text{
+    color: rgb(104, 104, 104);
+}
+
+
+h1 {
+    margin: 30px 0;
+}
+
+.card-title{
+    font-size: 20px;   
+}
+
+
+.container {
+    padding: min(50px, 7%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    gap: 15px;
+}
+
+.card-container {
+    padding: 2em;
+    border: 1px solid rgb(114, 114, 114);
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,.2);
+    text-align: center;
+    flex: 0 1 calc(33.33% - 15px); /* adjusted gap value to match 'gap' */
+/*    box-sizing: border-box;
+    max-width: 300px;
+    margin-bottom: 15px; /* adds vertical spacing */
+/*}
+
+
+/* Optional: Make cards responsive on smaller screens *//*
+@media screen and (max-width: 768px) {
+    .card-container {
+        flex: 0 1 calc(50% - 15px); /* On medium screens, each card will take 50% width *//*
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card-container {
+        flex: 0 1 calc(100% - 15px); /* On small screens, cards will take up 100% width */
+/*    }
+}*/
+.body {
+  max-width: 1100px;
+  margin: 40px auto;
+  font-family: 'Poppins', sans-serif;
+  background: #f9fafc;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #2b2d42;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.card-container {
+  background: linear-gradient(to top left, #ffffff, #f4f6f8);
+  border: 1px solid #e1e5ee;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #34495e;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: left;
+}
+
+.strong-text {
+  font-weight: 600;
+  color: #2b2d42;
+}
+
+.badge-pending {
+  color: #f39c12;
+  font-weight: 600;
+}
+
+.badge-approved {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.badge-rejected {
+  color: #c0392b;
+  font-weight: 600;
+}
+
+.badge-interview {
+  color: #2980b9;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .card-text {
+    text-align: left;
+  }
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #34495e;
+  margin-bottom: 16px;
+  text-align: left;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 6px;
+}
+
+/* Status-based underline colors */
+.title-pending {
+  border-color: #f39c12; /* amber */
+}
+
+.title-approved {
+  border-color: #27ae60; /* green */
+}
+
+.title-rejected {
+  border-color: #c0392b; /* red */
+}
+
+.title-interview {
+  border-color: #2980b9; /* blue */
+}

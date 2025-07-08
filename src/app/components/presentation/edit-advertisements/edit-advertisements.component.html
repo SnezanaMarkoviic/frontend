@@ -1,0 +1,93 @@
+<!--
+<div class="container">
+
+    <h1>Edit advertisement</h1>
+
+    <div class="form-group">
+    <label>Naziv pozicije:</label>
+    <input class="form-control" type="text" [(ngModel)] = "advertisement.naziv_pozicije">
+    </div>
+
+    <div class="form-group">
+        <label>Opis posla:</label>
+        <textarea class="form-control" [(ngModel)] = "advertisement.opis_posla"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Potrebno radno iskustvo: </label>
+        <input class="form-control" type="text" [(ngModel)] = "advertisement.zahtijevano_iskustvo"/>
+    </div>
+
+    <div class="form-group">
+        <label>Potrebne kvalifikacije: </label>
+        <input class="form-control" type="text" [(ngModel)] = "advertisement.potrebne_kvalifikacije"/>
+    </div>
+
+    <div class="form-group">
+        <label>Lokacija: </label>
+        <input class="form-control" type="text" [(ngModel)] = "advertisement.lokacija"/>
+    </div> 
+
+    <div class="form-group">
+        <label>Datum objave: </label>
+        <input class="form-control date" type="date" [(ngModel)] = "advertisement.datum_objave"/>
+    </div>
+
+     <div class="form-group">
+        <label>Datum isteka: </label>
+        <input class="form-control date" type="date" [(ngModel)] = "advertisement.datum_isteka"/>
+    </div>
+
+
+    <div class="form-group">
+        <button (click)="saveProject()" class="btn btn-primary">Save</button>
+    </div>
+
+
+ </div>
+ -->
+
+<div class="form-container">
+  <h2>Edit Advertisement</h2>
+
+  <div class="form-field">
+    <label for="naziv">Naziv pozicije</label>
+    <input id="naziv" type="text" [(ngModel)]="advertisement.naziv_pozicije" />
+  </div>
+
+  <div class="form-field">
+    <label for="opis">Opis posla</label>
+    <textarea id="opis" rows="4" [(ngModel)]="advertisement.opis_posla"></textarea>
+  </div>
+
+  <div class="form-row">
+    <div class="form-field">
+      <label for="iskustvo">Potrebno radno iskustvo</label>
+      <input id="iskustvo" type="text" [(ngModel)]="advertisement.zahtijevano_iskustvo" />
+    </div>
+
+    <div class="form-field">
+      <label for="kvalifikacije">Potrebne kvalifikacije</label>
+      <input id="kvalifikacije" type="text" [(ngModel)]="advertisement.potrebne_kvalifikacije" />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-field">
+      <label for="lokacija">Lokacija</label>
+      <input id="lokacija" type="text" [(ngModel)]="advertisement.lokacija" />
+    </div>
+
+    <div class="form-field">
+      <label for="objava">Datum objave</label>
+      <input id="objava" type="date" [(ngModel)]="advertisement.datum_objave" />
+    </div>
+  </div>
+
+  <div class="form-field">
+    <label for="istek">Datum isteka</label>
+    <input id="istek" type="date" [(ngModel)]="advertisement.datum_isteka" />
+  </div>
+
+  <button (click)="saveProject()" class="submit-btn">Save</button>
+</div>

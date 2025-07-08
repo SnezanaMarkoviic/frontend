@@ -1,0 +1,62 @@
+<!--
+<div class="body">
+<h1>Admin Homepage</h1>
+<div class="logOutdiv">
+  <button (click)="logOut()" class="logOutbtn">Log out</button>
+</div>
+  <button routerLink="/edit-form/{{username}}" class="btnNew btn-primary mb-3">Create New Job Offer</button>
+
+    <div class="container">
+        <div class="grid-container" *ngFor="let p of advertisementData">
+        <div class="card-container">
+            <h5 class="card-title">{{ p.naziv_pozicije }}</h5>
+            <p class="card-text">
+                <strong>Opis posla:</strong> {{ p.opis_posla }}<br>
+                <strong>Radno iskustvo:</strong> {{ p.zahtijevano_iskustvo }} godine<br>
+                <strong>Kvalifikacije:</strong> {{ p.potrebne_kvalifikacije }}<br>
+                <strong>Lokacija:</strong> {{ p.lokacija }}<br>
+                <strong>Datum objave:</strong> {{ p.datum_objave | date: 'dd.MM.yyyy.' }}<br>
+                <strong>Datum isteka:</strong> {{ p.datum_isteka | date: 'dd.MM.yyyy.' }}
+            </p>
+            <button routerLink="/edit-form/{{username}}/{{p.id}}" class="btnEdit btn-warning">Edit</button>
+            <button (click)="deletePosition(p.id)" class="btnDelete btn-danger">Delete</button>
+           <div class="candidate-list-button">
+               <button class="btnCandidateList" routerLink="/candidate-list/{{p.id}}">See candidate list</button>
+            </div> 
+        </div>
+        </div>
+    </div>
+</div>
+-->
+
+
+
+<div class="body">
+  <div class="logOutdiv">
+    <button (click)="logOut()" class="logOutbtn">Log out</button>
+  </div>
+
+  <button routerLink="/edit-form/{{username}}" class="btnNew btn-primary mb-3">Create New Job Offer</button>
+  <button class="btnScheduleInterviews" routerLink="/schedule-interviews/{{username}}/regruter">Schedule interviews</button>
+
+  <div class="container">
+    <div class="grid-container" *ngFor="let p of advertisementData">
+      <div class="card-container">
+        <h5 class="card-title">{{ p.naziv_pozicije }}</h5>
+        <p class="card-text">
+          <strong>Job Description:</strong> {{ p.opis_posla }}<br>
+          <strong>Experience Required:</strong> {{ p.zahtijevano_iskustvo }} years<br>
+          <strong>Qualifications:</strong> {{ p.potrebne_kvalifikacije }}<br>
+          <strong>Location:</strong> {{ p.lokacija }}<br>
+          <strong>Posted On:</strong> {{ p.datum_objave | date: 'dd.MM.yyyy.' }}<br>
+          <strong>Expiry Date:</strong> {{ p.datum_isteka | date: 'dd.MM.yyyy.' }}
+        </p>
+        <div class="buttons-row">
+          <button routerLink="/edit-form/{{username}}/{{p.id}}" class="btnEdit btn-warning">Edit</button>
+          <button (click)="deletePosition(p.id)" class="btnDelete btn-danger">Delete</button>
+          <button class="btnCandidateList" routerLink="/candidate-list/{{p.id}}">See Candidate List</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

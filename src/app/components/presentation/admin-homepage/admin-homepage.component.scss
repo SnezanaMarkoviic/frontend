@@ -1,0 +1,326 @@
+/*
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+.body{
+    margin-top: 120px;
+}
+
+.btnNew{
+    margin: 20px;
+    border-radius: 5px;
+    border-color: #1976d2;
+    color: white;
+    background-color: #1976d2;
+    min-height: 40px;
+    min-width: 150px;
+}
+
+.btnEdit{
+    background-color: blue;
+    border-color: blue;
+    border-radius: 3px;
+    color: white;
+    margin: 10px;
+    margin-right: 5px;
+    min-height: 20px;
+    min-width: 42px;
+}
+
+.btnDelete{
+    background-color: red;
+    border-color: red;
+    border-radius: 3px;
+    color: white;
+    margin: 10px;
+    margin-left: 5px;
+    min-height: 20px;
+    min-width: 45px;
+}
+
+.logOutdiv{
+    margin-top: -45px;
+    margin-right: -10px;
+    float: right;
+}
+
+.logOutbtn{
+    right: 0;
+    border-radius: 5px;
+    border-color: #1976d2;
+    color: white;
+    background-color: #1976d2;
+    min-height: 40px;
+    min-width: 120px;
+    font-size: 1.05rem;
+}
+
+.card-title{
+    font-size: 20px;   
+}
+
+.btnEdit, .btnDelete {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Separate container to push candidate list button below *//*
+.candidate-list-button-container {
+  margin-top: 10px; /* space between the buttons *//*
+}
+
+/* Style candidate list button *//*
+.btnCandidateList {
+  background-color: #135bb5;; /* or your preferred color *//*
+  color: white;
+  border-radius: 3px;
+  border: none;
+  padding: 5px 10px;
+  min-width: 150px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnCandidateList:hover {
+  background-color: #0f4d98;
+}
+
+.container {
+    padding: min(50px, 7%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    gap: 15px;
+
+    overflow: hidden;
+}
+
+.card-container {
+    padding: 2em;
+    border: 1px solid rgb(114, 114, 114);
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,.2);
+    text-align: center;
+    flex: 0 1 calc(33.33% - 15px); /* adjusted gap value to match 'gap' *//*
+    box-sizing: border-box;
+    max-width: 300px;
+    margin-bottom: 15px; /* adds vertical spacing *//*
+  
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card-container:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0.3);
+    z-index: 10;
+}
+
+
+
+/* Optional: Make cards responsive on smaller screens *//*
+@media screen and (max-width: 768px) {
+    .card-container {
+        flex: 0 1 calc(50% - 15px); /* On medium screens, each card will take 50% width *//*
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card-container {
+        flex: 0 1 calc(100% - 15px); /* On small screens, cards will take up 100% width *//*
+    }
+}*/
+
+
+.body {
+  max-width: 1100px;
+  margin: 40px auto;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+  color: #222;
+}
+
+/* Log out button container */
+.logOutdiv {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 25px;
+}
+
+/* Log out button with subtle neumorphism */
+.logOutbtn {
+  background: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow:
+    6px 6px 10px #d1d9e6,
+    -6px -6px 10px #ffffff;
+  color: #ff4b5c;
+  transition: all 0.3s ease;
+}
+.logOutbtn:hover {
+  color: #ff2a3c;
+  box-shadow:
+    inset 2px 2px 5px #d1d9e6,
+    inset -2px -2px 5px #ffffff;
+}
+
+/* New Job Offer button with glassmorphism effect */
+.btnNew {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #2b2d42 !important;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 60px;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(43, 45, 66, 0.1);
+  margin-left: 15px;
+  margin-bottom: 35px;
+  transition: all 0.35s ease;
+}
+.btnNew:hover {
+  background: rgba(43, 45, 66, 0.15);
+  color: #1d1f2a !important;
+}
+
+/* Grid container for cards */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+/* Card container with soft shadows and rounded edges */
+.card-container {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.07);
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-container:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Card title with modern font-weight and underline */
+.card-title {
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+  color: #2b2d42;
+  border-bottom: 3px solid #ff4b5c;
+  padding-bottom: 6px;
+}
+
+/* Card text styling */
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 28px;
+  user-select: text;
+}
+
+/* Buttons container */
+.buttons-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Shared button style */
+.buttons-row button {
+  flex: 1;
+  padding: 12px 0;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  user-select: none;
+}
+
+/* Edit button - vibrant coral */
+.btnEdit {
+  background: #ff6f61;
+  box-shadow: 0 6px 12px rgba(255, 111, 97, 0.4);
+}
+.btnEdit:hover {
+  background: #e55b50;
+  box-shadow: 0 8px 18px rgba(229, 91, 80, 0.6);
+}
+
+/* Delete button - soft red */
+.btnDelete {
+  background: #ff4b5c;
+  box-shadow: 0 6px 12px rgba(255, 75, 92, 0.4);
+}
+.btnDelete:hover {
+  background: #d93845;
+  box-shadow: 0 8px 18px rgba(217, 56, 69, 0.6);
+}
+
+/* Candidate List button - calm blue */
+.btnCandidateList {
+  background: #4a90e2;
+  box-shadow: 0 6px 12px rgba(74, 144, 226, 0.4);
+}
+.btnCandidateList:hover {
+  background: #357ABD;
+  box-shadow: 0 8px 18px rgba(53, 122, 189, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .buttons-row {
+    flex-direction: column;
+  }
+  .buttons-row button {
+    width: 100%;
+  }
+}
+
+
+.btnScheduleInterviews {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #2b2d42 !important;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 60px;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(43, 45, 66, 0.1);
+  margin-left: 20px;
+  margin-bottom: 35px;
+  transition: all 0.35s ease;
+}
+
+.btnScheduleInterviews:hover {
+  background: rgba(43, 45, 66, 0.15);
+  color: #1d1f2a !important;
+}

@@ -1,0 +1,67 @@
+<div class="schedule-container">
+  <div class="calendar-panel">
+    <h3>Zakazani intervjui</h3>
+
+    <div class="calendar-header">
+      <button (click)="previousMonth()">‹</button>
+      <span>{{ viewDate | date: 'MMMM yyyy' }}</span>
+      <button (click)="nextMonth()">›</button>
+    </div>
+
+    <mwl-calendar-month-view
+      [viewDate]="viewDate"
+      [events]="scheduledInterviews"
+      [activeDayIsOpen]="activeDayIsOpen">
+    </mwl-calendar-month-view>
+  </div>
+
+<!--
+  <div class="selected-day-interviews" *ngIf="scheduledInterviews.length > 0">
+    <h4>Vaši intervjui</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Pozicija</th>
+          <th>Regruter</th>
+          <th>Datum</th>
+          <th>Vrijeme</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let interview of selectedDayInterviews">
+           <td>{{ interview.naziv_pozicije }}</td>
+           <td>{{ this.regruterIme }}  {{this.regruterPrezime}}</td>
+           <td>{{ interview.datum_intervjua | date: 'dd.MM.yyyy' }}</td>
+           <td>{{ interview.datum_intervjua | date: 'HH:mm' }} h</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>-->
+
+
+
+<div class="selected-day-interviews" >
+  <h4 class="section-title">Scheduled Interviews</h4>
+  
+  <!-- Check if interviews array is empty -->
+  <div *ngIf="interviews.length === 0">
+    <p><em>No scheduled interviews.</em></p>
+  </div>
+  <ul class="interviews-list">
+    <li *ngFor="let interview of interviews" class="interview-card">
+      <div class="interview-header">
+        <p><strong class="position-name">Pozicija: {{ interview.naziv_pozicije }}</strong></p> <!-- Position name first -->
+        <p class="recruiter-name">Regruter: {{ interview.imeRegrutera }} {{ interview.prezimeRegrutera }}</p> <!-- Recruiter below -->
+      </div>
+      <div class="interview-details">
+        <p><strong>Datum:</strong> {{ interview.datum_intervjua | date: 'dd.MM.yyyy' }}</p>
+        <p><strong>Vrijeme:</strong> {{ interview.datum_intervjua | date: 'HH:mm' }} h</p>
+        <p><strong>Link: </strong>
+         <a *ngIf="interview.link" [href]="interview.link" target="_blank">Sesija je spremna</a>
+         <span *ngIf="!interview.link"></span>
+         </p>
+      </div>
+    </li>
+  </ul>
+</div>

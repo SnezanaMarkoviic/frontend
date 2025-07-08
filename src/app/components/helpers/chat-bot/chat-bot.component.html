@@ -1,0 +1,79 @@
+<!-- Kružno dugme za otvaranje chat bota 
+<button class="open-chat-btn" (click)="toggleChatBot()">💬</button>
+
+
+<div *ngIf="isOpen" class="chat-container">
+  <div class="chat-box">
+
+    <div *ngFor="let message of userMessages" class="user-message">
+      {{ message }}
+    </div>
+
+
+    <div *ngFor="let message of botMessages" class="bot-message">
+      {{ message }}
+    </div>
+  </div>
+
+  <div class="input-container">
+    <input [(ngModel)]="newMessage" placeholder="Type a message..." />
+    <button (click)="sendMessage()">Send</button>
+  </div>
+</div>-->
+
+
+<!-- Kružno dugme za otvaranje chat bota 
+<button class="open-chat-btn" (click)="toggleChatBot()">💬</button>
+
+<!-- Chat bot prozor 
+<div *ngIf="isOpen" class="chat-container">
+  <div class="chat-box">
+    <div *ngFor="let message of userMessages" class="user-message">
+      {{ message }}
+    </div>
+
+
+    <div *ngFor="let message of botMessages" class="bot-message">
+      {{ message }}
+    </div>
+  </div>
+
+  <div class="input-container">
+    <input [(ngModel)]="newMessage" placeholder="Type a message..." />
+    <button (click)="sendMessage()">Send</button>
+  </div>
+
+<script src="//code.tidio.co/cj8ptzjzydx6cvgedc9qij2pf8d75yr5.js" async></script>
+<script>
+  window.addEventListener('load', function() {
+    if (typeof tidioChatApi !== 'undefined') {
+      tidioChatApi.setLanguage('sr'); // Postavlja srpski jezik (koji je vrlo blizak crnogorskom)
+    }
+  });
+</script>
+-->
+
+
+<!-- Kružno dugme za otvaranje chat bota -->
+<button class="open-chat-btn" (click)="toggleChatBot()">💬</button>
+
+<!-- Chat bot prozor -->
+<div *ngIf="isOpen" class="chat-container">
+  <div class="chat-box">
+    <!-- Korisničke poruke -->
+    <div *ngFor="let message of userMessages" class="user-message">
+      {{ message }}
+    </div>
+
+    <!-- Bot odgovori -->
+    <div *ngFor="let message of botMessages" class="bot-message">
+      {{ message }}
+    </div>
+  </div>
+
+  <!-- Input za unos poruka -->
+  <div class="input-container">
+    <input [(ngModel)]="newMessage" placeholder="Type a message..." />
+    <button (click)="sendMessage()">Send</button>
+  </div>
+</div>

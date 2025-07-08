@@ -1,0 +1,141 @@
+/*
+* {
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.container{
+   background-color: linear-gradient(90deg,#e2e2e2,#c9d6ff); 
+   display: flex;
+   flex-direction: column;
+   margin-top: 120px;
+   margin-left: 500px;
+   position: relative;
+   width: 550px;
+   height: 580px;
+   background: #fff;
+   border-radius: 30px;
+   box-shadow: 0 0 30px rgba(0,0,.2);
+}
+
+.form-group{
+    margin: 10px;
+    margin-left: 50px;
+}
+
+.form-control{
+    width: 91%;
+}
+
+.form-control.date{
+    width: 91.8%;
+}
+
+
+h1{
+    text-align: center;
+}
+
+
+.btn{
+    width: 92.7%;
+    min-height: 32px;
+    border-radius: 5px;
+    color: whitesmoke;
+    background-color:  #1976d2;
+    border-color: #1976d2;
+}
+*/
+
+.form-container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.form-field label {
+  margin-bottom: 0.5rem;
+  color: #444;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-field input,
+.form-field textarea {
+  padding: 0.75rem 1rem;
+  border: 1.8px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.25s, box-shadow 0.25s;
+  font-family: inherit;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: #0077ff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 119, 255, 0.15);
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.form-row .form-field {
+  flex: 1;
+  min-width: 250px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #357ABD;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+<!--
+<div class="container">
+<h1>User homepage</h1>
+<div class="top-bar">
+  <div class="leftButtonDiv">
+    <button class="btnNew btnList" routerLink="/see-your-applications-list/{{username}}">See your applications</button>
+  </div>
+
+  <div class="logOutdiv">
+    <button (click)="logOut()" class="logOutbtn">Log out</button>
+  </div>
+</div>
+    
+     <div class="container">
+        <div class="grid-container" *ngFor="let p of newAdvertisementData">
+        <div class="card-container">
+            <h5 class="card-title">{{ p.naziv_pozicije }}</h5>
+            <p class="card-text">
+                <strong class="strong-text">Naziv firme:</strong>{{p.naziv_firme}}<br>
+                <strong class="strong-text">Opis posla:</strong> {{ p.opis_posla }}<br>
+                <strong class="strong-text">Radno iskustvo:</strong> {{ p.zahtijevano_iskustvo }} godine<br>
+                <strong class="strong-text">Kvalifikacije:</strong> {{ p.potrebne_kvalifikacije }}<br>
+                <strong class="strong-text">Lokacija:</strong> {{ p.lokacija }}<br>
+                <strong class="strong-text">Datum objave:</strong> {{ p.datum_objave | date: 'dd.MM.yyyy.' }}<br>
+                <strong class="strong-text">Datum isteka:</strong> {{ p.datum_isteka | date: 'dd.MM.yyyy.' }}
+            </p>
+            <button routerLink="/apply-for-advertisement/{{p.id}}/{{username}}" class="btnApply btn-warning">Apply</button>
+        </div>
+        </div>
+    </div>
+     
+
+-->    <!--<button routerLink="/ask-me-anything">Ask me anything</button>-->
+<!--    <app-chat></app-chat> -->
+<!--
+</div>
+-->
+
+<div class="wrapper">
+  <div class="top-bar">
+    <div class="leftButtonDiv">
+      <button class="btnNew btnList" routerLink="/see-your-applications-list/{{username}}">
+        See your applications
+      </button>
+      <button class="btnNew btnList" routerLink="/interviews-user/{{username}}">
+        Scheduled Interviews
+      </button>
+
+      
+        <!-- Chat bot component -->
+      <app-chat-bot></app-chat-bot> <!-- Ovo je gde će chat bot biti prikazan -->
+
+    </div>
+
+    <div class="logOutdiv">
+      <button (click)="logOut()" class="logOutbtn">Log out</button>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="card-container" *ngFor="let p of newAdvertisementData">
+      <h5 class="card-title">{{ p.naziv_pozicije }}</h5>
+      <p class="card-text">
+        <strong>Naziv firme:</strong> {{p.naziv_firme}}<br />
+        <strong>Opis posla:</strong> {{ p.opis_posla }}<br />
+        <strong>Radno iskustvo:</strong> {{ p.zahtijevano_iskustvo }} godine<br />
+        <strong>Kvalifikacije:</strong> {{ p.potrebne_kvalifikacije }}<br />
+        <strong>Lokacija:</strong> {{ p.lokacija }}<br />
+        <strong>Datum objave:</strong> {{ p.datum_objave | date: 'dd.MM.yyyy.' }}<br />
+        <strong>Datum isteka:</strong> {{ p.datum_isteka | date: 'dd.MM.yyyy.' }}
+      </p>
+      <button routerLink="/apply-for-advertisement/{{p.id}}/{{username}}" class="btnApply btn-warning">Apply</button>
+    </div>
+  </div>
+
+
+
+</div>

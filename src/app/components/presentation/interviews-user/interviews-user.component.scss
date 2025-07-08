@@ -1,0 +1,290 @@
+
+.schedule-container {
+  max-width: 100vw;        
+  margin: 50px auto 30px auto;
+  margin-left: 50vw;       
+  height: calc(100vh - 60px);
+  display: flex;
+  gap: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.calendar-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50vw;              
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.candidates-panel {
+  flex: 1;
+  width: 50vw;              
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+
+.calendar-panel h3 {
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.calendar-header button {
+  cursor: pointer;
+  padding: 6px 14px;
+  font-size: 18px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.calendar-header button:hover {
+  background: #0056b3;
+}
+
+.mwl-calendar-month-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.mwl-calendar-month-view table {
+  width: 100%;
+  height: 100%;
+  border-collapse: separate;
+  border-spacing: 3px;
+  table-layout: fixed;
+}
+
+.mwl-calendar-month-view td {
+  height: 50px;
+  padding: 5px 8px;
+  vertical-align: top;
+  border-radius: 6px;
+  background: #f9f9f9;
+  font-size: 0.75rem;
+  cursor: default;
+  overflow: hidden;
+}
+.selected-day-interviews ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.selected-day-interviews li {
+  padding: 12px 16px;
+  margin: 8px 16px; /* Makes the card narrower than the container */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-size: 0.85rem;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.selected-day-interviews li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
+}
+
+.selected-day-interviews li strong {
+  font-size: 1rem;
+  color: #007bff;
+}
+
+.selected-day-interviews button {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* To prevent text wrapping */
+}
+
+.selected-day-interviews button:hover {
+  background-color: #0056b3;
+}
+
+.selected-day-interviews button:focus {
+  outline: 3px solid #80bdff;
+  outline-offset: 2px;
+}
+
+.selected-day-interviews table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.selected-day-interviews th,
+.selected-day-interviews td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #cdcdcd;
+  text-align: left;
+}
+
+.selected-day-interviews th {
+  background-color: #ececec;
+  color: #055dbb;
+  border-radius: 2px;
+}
+
+.selected-day-interviews tr:last-child td {
+  border-bottom: none;
+}
+
+
+
+
+
+
+
+//
+
+/* Container for the interviews */
+.selected-day-interviews {
+  width: 85%;
+  margin-top: 25px;
+  background: #f8f9fa; /* Light grey background for a professional look */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  color: #333;
+  max-width: 900px; /* Increased max width for a wider layout */
+  margin: 20px auto;
+}
+
+/* Title Style */
+.selected-day-interviews h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0a58ca; /* Deep blue for the title */
+  margin-bottom: 25px;
+}
+
+/* List of interviews */
+.interviews-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.interview-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px 30px; /* Increased padding for more spacious design */
+  margin-bottom: 20px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+}
+
+.interview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Header layout for position and recruiter name */
+.interview-header {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  display: block; /* Ensure block-level layout */
+}
+
+/* Position Name */
+.position-name {
+  font-size: 1.8rem; /* Increased font size for more emphasis */
+  font-weight: 700;  /* Bolder text */
+  color: #007bff;    /* Bright blue for position name */
+  margin-bottom: 5px; /* Space between position name and recruiter name */
+}
+
+/* Recruiter Name */
+.recruiter-name {
+  color: #555; /* Dark grey for recruiter’s name */
+  font-size: 1rem;
+  font-style: italic; /* Add space between the position and recruiter name */
+  margin-bottom: 8px; /* Reduced gap between recruiter name and the date */
+}
+
+/* Interview details section */
+.interview-details p {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: #333;
+}
+
+.interview-details strong {
+  font-weight: 600;
+  color: #555; /* Slightly darker color for labels */
+}
+
+.interview-details {
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .selected-day-interviews {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .interview-card {
+    padding: 15px 20px;
+  }
+
+  .position-name {
+    font-size: 1.2rem;
+  }
+
+  .recruiter-name {
+    font-size: 0.9rem;
+  }
+
+  .interview-details p {
+    font-size: 0.9rem;
+  }
+}

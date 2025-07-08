@@ -1,0 +1,280 @@
+/*
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+.body{
+    margin-top: 120px;
+}
+
+
+.logOutdiv{
+    margin-top: -65px;
+    margin-left: 1128px;
+}
+
+.logOutbtn{
+    right: 0;
+    border-radius: 5px;
+    border-color: #1976d2;
+    color: white;
+    background-color: #1976d2;
+    min-height: 40px;
+    min-width: 120px;
+    font-size: 1.05rem;
+}
+
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  margin-bottom: 20px;
+}
+
+.leftButtonDiv {
+    margin-top: 60px;
+    margin-left: -3px;
+    margin-bottom: 0px;
+}
+
+
+.btnNew{
+    margin: 20px;
+    border-radius: 5px;
+    border-color: #1976d2;
+    color: white;
+    background-color: #1976d2;
+    min-height: 40px;
+    min-width: 150px;
+}
+
+
+
+
+.btnApply{
+    background-color: blue;
+    border-color: blue;
+    border-radius: 3px;
+    color: white;
+    margin: 10px;
+    margin-right: 5px;
+    min-height: 30px;
+    min-width: 65px;
+}
+
+.strong-text{
+    color: rgb(104, 104, 104);
+}
+
+
+h1 {
+    margin: 30px 0;
+}
+
+.card-title{
+    font-size: 20px;   
+}
+
+
+.container {
+    padding: min(50px, 7%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    gap: 15px;
+}
+
+.card-container {
+    padding: 2em;
+    border: 1px solid rgb(114, 114, 114);
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,.2);
+    text-align: center;
+    flex: 0 1 calc(33.33% - 15px); /* adjusted gap value to match 'gap' */
+/*    box-sizing: border-box;
+    max-width: 300px;
+    margin-bottom: 15px; /* adds vertical spacing *//*
+}
+
+
+/* Optional: Make cards responsive on smaller screens *//*
+@media screen and (max-width: 768px) {
+    .card-container {
+        flex: 0 1 calc(50% - 15px); /* On medium screens, each card will take 50% width *//*
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card-container {
+        flex: 0 1 calc(100% - 15px); /* On small screens, cards will take up 100% width *//*
+    }
+}
+    */
+
+/* Outer wrapper container */
+.wrapper {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: #f5f7fa;
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+/* Grid container for cards */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+/* Individual job ad card */
+.card-container {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Title */
+.card-title {
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+  color: #2b2d42;
+  border-bottom: 3px solid #2a86ff;;
+  padding-bottom: 6px;
+  user-select: text;
+}
+
+/* Text inside card */
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 28px;
+  user-select: text;
+}
+
+/* Apply button */
+.btnApply {
+  align-self: flex-start;
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  border: none;
+  background-color: #4a90e2;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  user-select: none;
+}
+
+.btnApply:hover {
+  background-color: #357abd;
+  box-shadow: 0 8px 18px rgba(53, 122, 189, 0.6);
+}
+
+/* Top bar (buttons container) */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+/* Buttons inside top bar */
+.top-bar button {
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 32px rgba(43, 45, 66, 0.1);
+  user-select: none;
+}
+
+/* See your applications button */
+.btnNew.btnList {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  margin: 10px;
+  margin-left: 2px;
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #2b2d42 !important;
+}
+
+.btnNew.btnList:hover {
+  background: rgba(43, 45, 66, 0.15);
+  color: #1d1f2a !important;
+}
+
+/* Log out button style */
+.logOutbtn {
+  color: #2a86ff;
+  background: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    6px 6px 10px #d1d9e6,
+    -6px -6px 10px #ffffff;
+}
+
+.logOutbtn:hover {
+  color: #4a90e2 !important;
+  box-shadow:
+    inset 2px 2px 5px #d1d9e6,
+    inset -2px -2px 5px #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .top-bar button {
+    width: 100%;
+  }
+
+  .btnApply {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+
+
+

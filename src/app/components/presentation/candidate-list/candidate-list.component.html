@@ -1,0 +1,82 @@
+<!--<div class="container">
+
+
+<table class="table table-bordered table striped">
+    <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Email</th>
+        <th>Telefon</th>
+        <th>Radno iskustvo</th>
+        <th>Obrazovanje</th>
+        <th>Sertifikati</th>
+        <th>Jezici</th>
+        <th>Datum registacije</th>
+        <th>Status prijave</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let c of candidatesData">
+        <td>{{c.ime}}</td>
+        <td>{{c.prezime}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.telefon}}</td>
+        <td>{{c.radno_iskustvo_godine}}</td>
+        <td>{{c.obrazovanje}}</td>
+        <td>{{c.sertifikati}}</td>
+        <td>{{c.jezici}}</td>
+        primjer date pipe-a-->
+      <!--  <td>{{c.datum_prijave | date: " dd.MM.yyyy. "}}</td>
+        <td>  
+             <select [(ngModel)]="c.status_prijave" (change)="onStatusChange(c)">
+                    <option value="U razmatranju">U razmatranju</option>
+                    <option value="Prihvaćen">Prihvaćen</option>
+                    <option value="Poziv za intervju">Poziv za intervju</option>
+                    <option value="Odbijen">Odbijen</option>
+             </select>
+        </td>
+        <td>
+            <button>Zakazi intervju</button>
+        </td>
+     </tr>
+</table>
+</div>-->
+
+<div class="candidate-container">
+  <h2>Candidate List</h2>
+  <div class="candidate-table">
+    <!-- Header -->
+    <div class="candidate-header">
+      <div>Ime</div>
+      <div>Prezime</div>
+      <div>Email</div>
+      <div>Telefon</div>
+      <div>Iskustvo</div>
+      <div>Obrazovanje</div>
+      <div>Sertifikati</div>
+      <div>Jezici</div>
+      <div>Datum registracije</div>
+      <div>Status prijave</div>
+    </div>
+
+    <!-- Rows -->
+    <div class="candidate-row" *ngFor="let c of candidatesData">
+      <div>{{c.ime}}</div>
+      <div>{{c.prezime}}</div>
+      <div>{{c.email}}</div>
+      <div>{{c.telefon}}</div>
+      <div>{{c.radno_iskustvo_godine}}</div>
+      <div>{{c.obrazovanje}}</div>
+      <div>{{c.sertifikati}}</div>
+      <div>{{c.jezici}}</div>
+      <div>{{c.datum_prijave | date: 'dd.MM.yyyy.'}}</div>
+      <div>
+        <select [(ngModel)]="c.status_prijave" (change)="onStatusChange(c)">
+          <option value="U razmatranju">U razmatranju</option>
+          <option value="Prihvaćen">Prihvaćen</option>
+          <option value="Poziv za intervju">Poziv za intervju</option>
+          <option value="Odbijen">Odbijen</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

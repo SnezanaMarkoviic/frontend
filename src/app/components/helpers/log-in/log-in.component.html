@@ -1,0 +1,174 @@
+ <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">RecruitmetSystem</a>
+  </header>
+
+
+<div class="container" [class.active]="isActive">
+   
+    <div class="form-box login">
+  <form>
+    <h1>Log in</h1>
+
+    <!-- Username polje -->
+    <div class="input-box">
+      <img src="assets/images/gray-user-profile-icon-png-fP8Q1P.png" alt="user" class="log-in-icons" [ngClass]="{'img-error': showUsernameError !== '' }">
+      <input 
+        type="text" 
+        placeholder="Username" 
+        [(ngModel)]="input.username" 
+        name="username"
+        (ngModelChange)="clearError('username')"
+        [ngClass]="{ 'input-error': showUsernameError !== '' }"
+      />
+      
+      <!-- Poruke za greške -->
+      <p *ngIf="showUsernameError === 'Obavezno polje'" class="error-text">Polje je obavezno</p>
+      <p *ngIf="showUsernameError === 'Pogrešan username ili lozinka'" class="error-text">Pogrešan username ili lozinka</p>
+      <p *ngIf="showUsernameError === 'Korisnik nije pronađen.'" class="error-text">Korisnik nije pronađen</p>
+    </div>
+
+    <!-- Password polje -->
+    <div class="input-box">
+  <img src="assets/images/0117cb0129593faa02646a8277ca80e3-security-lock-icon.png" alt="lock" class="log-in-icons" [ngClass]="{'img-error': showPasswordError !== '' }">
+  <input 
+    type="password" 
+    placeholder="Password" 
+    [(ngModel)]="input.lozinka" 
+    name="password"
+    (ngModelChange)="clearError('password')"
+    [ngClass]="{ 'input-error': showPasswordError !== '' }"
+  />
+  <!-- Poruke za greške -->
+  <p *ngIf="showPasswordError === 'Obavezno polje'" class="error-text">Polje je obavezno</p>
+  <p *ngIf="showPasswordError === 'Pogrešan username ili lozinka'" class="error-text">Pogrešan username ili lozinka</p>
+</div>
+
+    <!-- Login dugme -->
+    <button class="LogInbtn" (click)="logIn()">Log in</button>
+  </form>
+</div>
+   
+    <!-- 
+    <div class="form-box login">
+        
+        <form action="">
+            <h1>Log in</h1>
+            <p  *ngIf="showUsernameError === 'Pogresan username ili lozinka'">Pogresan username ili lozinka"</p>
+            <div class="input-box">
+                <img src="assets/images/gray-user-profile-icon-png-fP8Q1P.png" alt="user" class="log-in-icons">
+                <input type="text" placeholder="Username" [(ngModel)] = "input.username" [ngClass]="{'input-error':showUsernameError}" name="username">
+                <p *ngIf="showUsernameError === 'Obavezno polje'" class="error-text">Obavezno polje</p>
+                <p *ngIf="showUsernameError === 'Korisnik nije pronađen'" class="error-text">Korisnik nije pronađen</p>
+            </div>
+            <div class="input-box">
+                <img src="assets/images/0117cb0129593faa02646a8277ca80e3-security-lock-icon.png" alt="lock" class="log-in-icons">
+                <input type="password" placeholder="Password" [(ngModel)] = "input.lozinka" [ngClass]="{'input-error':showPasswordError}" name="password">
+                 <p *ngIf="showUsernameError === 'Obavezno polje'" class="error-text">Obavezno polje</p>
+                <p *ngIf="showUsernameError === 'Neispravna lozinka'" class="error-text">Neispravna lozinka</p>
+
+            </div>
+
+            <button class="btn" (click)="logIn()">Log in</button>
+
+        </form>
+    
+       
+    </div>
+-->
+     <div *ngIf="isActive" class="form-box register">
+    <form (ngSubmit)="onRegisterSubmit()" #regForm="ngForm" novalidate>
+
+      <h1>Registration</h1>
+
+      <div class="input-box">
+        <img src="assets/images/gray-user-profile-icon-png-fP8Q1P.png" alt="user" class="log-in-icons" [ngClass]="{'img-error': registrationErrors['ime']}"/>
+        <input
+          type="text"
+          placeholder="Name"
+          [(ngModel)]="registartionInput.name"
+          name="name"
+          required
+          (ngModelChange)="clearError('ime')"
+          [ngClass]="{ 'input-error': registrationErrors['ime'] }"
+        />
+        <div class="error" *ngIf="registrationErrors['ime']">{{ registrationErrors['ime'] }}</div>
+      </div>
+
+      <div class="input-box">
+        <img src="assets/images/gray-user-profile-icon-png-fP8Q1P.png" alt="user" class="log-in-icons" [ngClass]="{'img-error': registrationErrors['prezime']}"/>
+        <input
+          type="text"
+          placeholder="Surname"
+          [(ngModel)]="registartionInput.surname"
+          name="surname"
+          required
+          (ngModelChange)="clearError('prezime')"
+          [ngClass]="{ 'input-error': registrationErrors['prezime'] }"
+        />
+        <div class="error" *ngIf="registrationErrors['prezime']">{{ registrationErrors['prezime'] }}</div>
+      </div>
+
+      <div class="input-box">
+        <img src="assets/images/8443237.png" alt="user" class="log-in-icons" [ngClass]="{'img-error': registrationErrors['email']}"/>
+        <input
+          type="email"
+          placeholder="Email"
+          [(ngModel)]="registartionInput.email"
+          name="email"
+          required
+          (ngModelChange)="clearError('email')"
+          [ngClass]="{ 'input-error': registrationErrors['email'] }"
+        />
+        <div class="error" *ngIf="registrationErrors['email']">{{ registrationErrors['email'] }}</div>
+      </div>
+
+      <div class="input-box">
+        <img src="assets/images/gray-user-profile-icon-png-fP8Q1P.png" alt="user" class="log-in-icons"  [ngClass]="{'img-error': registrationErrors['username']}"/>
+        <input
+          type="text"
+          placeholder="Username"
+          [(ngModel)]="registartionInput.username"
+          name="username"
+          required
+          (ngModelChange)="clearError('username')"
+          [ngClass]="{ 'input-error': registrationErrors['username'] }"
+        />
+        <div class="error" *ngIf="registrationErrors['username']">{{ registrationErrors['username'] }}</div>
+      </div>
+
+      <div class="input-box">
+        <img src="assets/images/0117cb0129593faa02646a8277ca80e3-security-lock-icon.png" alt="lock" class="log-in-icons" [ngClass]="{'img-error': registrationErrors['password']}"/>
+        <input
+          type="password"
+          placeholder="Password"
+          [(ngModel)]="registartionInput.password"
+          name="password"
+          required
+          (ngModelChange)="clearError('password')"
+          [ngClass]="{ 'input-error': registrationErrors['password'] }"
+        />
+        <div class="error" *ngIf="registrationErrors['password']">{{ registrationErrors['password'] }}</div>
+      </div>
+
+      <button class="SignUpbtn" type="submit">Sign up</button>
+
+    </form>
+  </div>
+    
+
+    <div class="panel-box">
+        <div class="panel panel-left">
+          <h1>Hello, Welcome!</h1>
+          <p>Don't have the account?</p>
+          <button class="btn register-btn" (click)="onRegisterClick()">Sign up</button>
+        </div>
+        <div class="panel panel-right">
+            <h1>Welcome Back!</h1>
+            <p>Already have the account?</p>
+            <button class="btn login-btn"  (click)="onLogInClick()">Log in</button>
+        </div>
+    </div>
+
+
+</div>    

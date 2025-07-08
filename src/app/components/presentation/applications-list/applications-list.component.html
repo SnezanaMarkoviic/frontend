@@ -1,0 +1,52 @@
+<!--
+<div class="container">
+    
+     <div class="container">
+        <div class="grid-container" *ngFor="let a of applicationsData">
+        <div class="card-container">
+            <h5 class="card-title">{{ a.naziv_pozicije }}</h5>
+            <p class="card-text">
+                <strong class="strong-text">Naziv firme:</strong>{{a.naziv_firme}}<br>
+                <strong class="strong-text">Lokacija:</strong> {{ a.lokacija }}<br>
+                <strong class="strong-text">Datum prijave:</strong> {{ a.datum_prijave | date: 'dd.MM.yyyy.' }}<br>
+                <strong class="strong-text">Status prijave:</strong>{{a.status_prijave}}
+            </p>
+        </div>
+        </div>
+    </div>
+
+
+</div>
+-->
+<div class="body">
+
+  <h1 class="page-title">Your Applications</h1>
+
+  <div class="container">
+    <div class="card-container" *ngFor="let a of applicationsData">
+      <h5 class="card-title"
+     [ngClass]="{
+                'title-pending': a.status_prijave === 'U razmatranju',
+                'title-approved': a.status_prijave === 'Prihvacen',
+                'title-rejected': a.status_prijave === 'Odbijen',
+                'title-interview': a.status_prijave === 'Poziv za intervju'
+                }">
+                {{ a.naziv_pozicije }}
+     </h5>
+      <p class="card-text">
+        <strong class="strong-text">Naziv firme:</strong>{{a.naziv_firme}}<br>
+        <strong class="strong-text">Lokacija:</strong> {{ a.lokacija }}<br>
+        <strong class="strong-text">Datum prijave:</strong> {{ a.datum_prijave | date: 'dd.MM.yyyy.' }}<br>
+        <strong class="strong-text">Status prijave:</strong> 
+        <span [ngClass]="{
+        'badge-pending': a.status_prijave === 'U razmatranju',
+        'badge-approved': a.status_prijave === 'Prihvacen',
+        'badge-rejected': a.status_prijave === 'Odbijen',
+        'badge-interview': a.status_prijave === 'Poziv za intervju'
+        }">
+        {{ a.status_prijave }}
+</span>
+      </p>
+    </div>
+  </div>
+</div>

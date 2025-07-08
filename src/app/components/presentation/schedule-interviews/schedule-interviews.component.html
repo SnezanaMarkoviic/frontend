@@ -1,0 +1,97 @@
+<div class="schedule-container">
+  <div class="calendar-panel">
+    <h3>Zakazani intervjui</h3>
+
+    <div class="calendar-header">
+      <button (click)="previousMonth()">‹</button>
+      <span>{{ viewDate | date: 'MMMM yyyy' }}</span>
+      <button (click)="nextMonth()">›</button>
+    </div>
+
+    <mwl-calendar-month-view
+      [viewDate]="viewDate"
+      [events]="scheduledInterviews"
+      [activeDayIsOpen]="activeDayIsOpen"
+      (dayClicked)="dayClicked($event.day.date)">
+    </mwl-calendar-month-view>
+  </div>
+
+  <div class="candidates-panel">
+  <div class="candidates-schedule" >
+    <h3>Kandidati za zakazivanje</h3>
+    <ul *ngIf="candidates.length > 0; else noCandidates">
+      <li *ngFor="let candidate of candidates">
+        <strong>{{ candidate.ime }} {{ candidate.prezime }}</strong><br />
+        Pozicija: {{ candidate.naziv_pozicije }}<br />
+        Datum prijave: {{ candidate.datum_prijave | date:'shortDate' }}<br />
+
+        <input type="date" #interviewDate />
+        <input type="time" #interviewTime />
+        <button (click)="scheduleInterview(candidate, interviewDate.value, interviewTime.value)">Zakaži</button>
+      </li>
+    </ul>
+    <ng-template #noCandidates>
+      <p>Nema kandidata za intervju.</p>
+    </ng-template>
+  </div>
+
+  <!--
+  <div class="selected-day-interviews" *ngIf="selectedDayInterviews.length > 0">
+    <h4>Intervjui za dan: {{ selectedDateDisplay }}</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Ime i Prezime</th>
+          <th>Pozicija</th>
+          <th>Datum</th>
+          <th>Vrijeme</th>
+          <th>Akcija</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let interview of selectedDayInterviews">
+          <td>{{ interview.ime }} {{ interview.prezime }}</td>
+          <td>{{ interview.naziv_pozicije }}</td>
+           <td>{{ interview.datum_intervjua | date: 'dd.MM.yyyy' }}</td>
+           <td>{{ interview.datum_intervjua | date: 'HH:mm' }} h</td>
+          <td>
+          <button (click)="startVideoCall(interview)">Pozovi</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="video-call" *ngIf="videoCallActive" class="video-call-container">
+  <video #localVideo autoplay muted playsinline></video>
+  <button (click)="endVideoCall()">Završi poziv</button>
+</div>-->
+
+
+<div class="selected-day-interviews" *ngIf="selectedDayInterviews.length > 0">
+  <h4>Intervjui za dan: {{ selectedDateDisplay }}</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Ime i Prezime</th>
+        <th>Pozicija</th>
+        <th>Datum</th>
+        <th>Vrijeme</th>
+        <th>Akcija</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let interview of selectedDayInterviews">
+        <td>{{ interview.ime }} {{ interview.prezime }}</td>
+        <td>{{ interview.naziv_pozicije }}</td>
+        <td>{{ interview.datum_intervjua | date: 'dd.MM.yyyy' }}</td>
+        <td>{{ interview.datum_intervjua | date: 'HH:mm' }} h</td>
+        <td>
+          <!-- Video Call Button -->
+          <button (click)="startVideoCall(interview)">Pozovi</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
